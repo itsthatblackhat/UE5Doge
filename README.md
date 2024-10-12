@@ -1,21 +1,26 @@
-The .cpp file and .h file should go into your unreal engine project under a 'Dogecoin' folder.
-The files under RPDHandler, should be ran separately from the game client for operations.
+# Dogecoin Integration Setup
 
-You will also need to be hosting a dogecoin node on your computer or point to the node you wish to use in the source.
+## Project Structure
+
+1. Place the `.cpp` and `.h` files under the `Dogecoin` folder in your Unreal Engine project.
+2. The files located in the `RPDHandler` folder should be run separately from the game client for operations.
+
+## Dogecoin Node
+
+You will need to host a Dogecoin node on your computer or point to an external node in the source.
+
+### Windows Node Configuration
+
+For Windows, the configuration file is located under:
+C:\Users\somecooldude\AppData\Roaming\Dogecoin\
 
 
-also for testnet here is my config file..
-if you're on windows it will be under:
-c:\users\somecooldude\AppData\Roaming\Dogecoin\
--------------------------------------------------
+Use the following configuration for testnet:
+
+```config
 testnet=1
 server=1
 rpcuser=pooperdinkles
 rpcpassword=pooperdinkles
 rpcallowip=127.0.0.1
 rpcport=18332
--------------------------------------------------
-
-Run the dogecoin node, 
-Run the RPDHandler,
-Rule the world
