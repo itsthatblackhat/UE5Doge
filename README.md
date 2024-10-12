@@ -2,7 +2,7 @@
 
 ## Project Structure
 
-1. Place the `.cpp` and `.h` files under the `Dogecoin` folder in your Unreal Engine project.
+1. Place the `.cpp` and `.h` files under the `Dogecoin` folder in your Unreal Engine project (the src dir).
 2. The files located in the `RPDHandler` folder should be run separately from the game client for operations.
 
 ## Dogecoin Node
