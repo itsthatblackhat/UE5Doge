@@ -168,16 +168,4 @@ void UTransactionManager::ProcessPurchase(AValuableObject* Item, APlayerControll
 ---
 
 ## 📝 **Contributors**
-- **Your Name** - Lead Developer
-- **Collaborator 1** - Gameplay Mechanics
-- **Collaborator 2** - Blockchain Integration
-
----
-
-## 📄 **License**
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 📧 **Contact**
-For any inquiries, please contact [your-email@example.com].
+- **TheDogeBird** - Lead Developer
