@@ -91,20 +91,6 @@ ReadyPlayerDoge/
 
 ---
 
-## 🔧 **Installation & Setup**
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/your-repo/ReadyPlayerDoge.git
-    cd ReadyPlayerDoge
-    ```
-
-2. Open the project in **Unreal Engine**.
-
-3. Ensure you have the following dependencies installed:
-    - Unreal Engine 5+
-    - Dogecoin Node (for blockchain transactions)
-
----
 
 ## 🚀 **Gameplay Instructions**
 
