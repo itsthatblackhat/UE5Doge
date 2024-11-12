@@ -1,74 +1,70 @@
-Latest changes/updates to private srC:
-
 # LatestChanges.md
 
-## 📝 Summary of Updates and New Features
+## 🚀 ReadyPlayerDoge Inventory System Updates
 
-### 1. Enhanced Inventory System
+### **Date: 2024-11-11**
 
-#### Features Added
-- **Dynamic Inventory Initialization**:
-  - The inventory grid is dynamically created based on the grid dimensions specified in `InventoryCore`, with each slot represented by an `InventorySlotWidget`.
-- **Item Details Display**:
-  - Clicking on an item displays detailed information such as the item name, Dogecoin value, and item icon.
-  - Enhanced `DisplayItemDetails()` function to update item details when an item is selected.
+## 🆕 Features Added:
+1. **Dynamic Inventory Initialization**:
+   - Added support for dynamically initializing inventory slots based on grid size (`GridWidth` and `GridHeight`).
+   - Implemented `PopulateInventorySlots()` function to dynamically populate the inventory slots in the UI.
 
-#### Improvements Made
-- **Real-Time Inventory Updates**:
-  - Improved the `UpdateInventoryDisplay()` method to refresh the inventory grid whenever changes occur, ensuring the UI stays in sync with the game state.
+2. **Inventory Slot Widget**:
+   - Enhanced `UInventorySlotWidget` to handle item data display, including name, icon, and quantity.
+   - Added support for displaying item details upon clicking a slot.
+   - Integrated drag-and-drop functionality to move items between slots:
+     - `NativeOnMouseButtonDown()` for detecting drag initiation.
+     - `NativeOnDragDetected()` for creating drag operations.
+     - `NativeOnDrop()` for handling item swapping between slots.
+   - Added `SetItemData()` function to update slot with item details.
+   - Improved `UpdateSlotDisplay()` to dynamically update the item display.
 
----
+3. **Item Details Display**:
+   - Implemented `DisplayItemDetails()` in `UInventoryUI` to show item details (name, icon, and value) when an inventory slot is clicked.
+   - Added Blueprint bindings to update item details in the UI.
 
-### 2. Dogecoin Integration and Transaction Management
+4. **Transaction Notification System**:
+   - Added support for displaying transaction results (success or failure) in the inventory UI.
+   - Implemented `DisplayTransactionResult()` function with color-coded notifications (green for success, red for failure).
+   - Added `HideTransactionNotification()` to automatically hide the notification after 3 seconds.
 
-#### Features Added
-- **Transaction Feedback**:
-  - Implemented `DisplayTransactionResult()` to show feedback for Dogecoin transactions.
-  - Displays success or failure messages with color-coded text (green for success, red for failure).
-- **Automatic Hiding of Transaction Notifications**:
-  - Added a timed function `HideTransactionNotification()` to hide transaction feedback messages after a few seconds.
-  - Ensures the UI remains clean and notifications do not clutter the screen.
+5. **Blueprint Integration**:
+   - Set up Blueprint interfaces (`WBP_InventoryUI` and `WBP_InventorySlotWidget`) to interact with the C++ inventory system.
+   - Added new variables and event bindings to Blueprint widgets to reflect changes in the inventory system.
 
-#### Improvements Made
-- **Blueprint-Callable Functions**:
-  - Updated functions like `DisplayTransactionResult()` to be `BlueprintCallable`, making them accessible in Blueprints for further customization.
+## 🔄 Improvements & Refactoring:
+1. **Optimized Inventory Core**:
+   - Refactored `AInventoryCore` functions to better manage item additions, removals, and swapping.
+   - Simplified slot item access using the `GetItemFromSlot()` function.
 
----
+2. **UI Code Cleanup**:
+   - Reduced redundant code in `InventorySlotWidget.cpp` and `InventoryUI.cpp`.
+   - Streamlined `InitializeInventory()` and `PopulateInventorySlots()` for better readability and performance.
+   - Updated `SetItemData()` to include quantity as a parameter for future support of stackable items.
 
-### 3. UI Enhancements
+3. **Drag-and-Drop Enhancements**:
+   - Improved the drag-and-drop logic to handle edge cases and ensure smooth item transfers.
+   - Added visual feedback for slot interactions during drag-and-drop operations.
 
-#### Features Added
-- **Notification System for Transactions**:
-  - Added a `TransactionNotificationBorder` and `TransactionResultText` to the `InventoryUI` for displaying notifications.
-  - Provides players with immediate feedback directly in the game UI for Dogecoin transactions.
+## 🛠️ Bug Fixes:
+1. **Fixed Compilation Errors**:
+   - Resolved issues with mismatched function signatures and missing includes.
+   - Addressed issues with incomplete type errors and undeclared identifiers.
 
-#### Improvements Made
-- **User Feedback and Visual Cues**:
-  - Enhanced the player experience by providing immediate feedback on transactions, helping players understand whether their purchases or sales were successful.
+2. **Slot Display Fixes**:
+   - Fixed issues where slot widgets were not properly displaying updated item information.
+   - Resolved problems with item details not clearing correctly when an empty slot is clicked.
 
----
+3. **Transaction System Fixes**:
+   - Fixed transaction notifications not displaying correctly due to incorrect bindings.
+   - Ensured that transaction messages hide after the specified delay.
 
-### 4. Item Interactions
-
-#### Features Added
-- **Item Actions (Equip, Use, Discard)**:
-  - Added functionality to handle item interactions directly within the inventory:
-    - `UseItem()`: Uses consumable items.
-    - `EquipItem()`: Equips equippable items.
-    - `DiscardItem()`: Removes items from the inventory.
-
-#### Improvements Made
-- **Context Menu for Item Actions**:
-  - Improved item interaction flow, allowing players to use, equip, or discard items seamlessly.
-
----
-
-### 5. Code Refactoring and Optimization
-
-#### Improvements Made
-- **Modularization**:
-  - Separated transaction handling, item management, and inventory updates into distinct functions for better maintainability and clarity.
-- **Error Handling and Logging**:
-  - Added logging messages (`UE_LOG`) to assist with debugging and ensure all actions are tracked, especially during Dogecoin transactions.
+## 🔮 Potential Future Enhancements:
+1. **Stackable Items**: Support for managing item stacks and updating the quantity display in inventory slots.
+2. **Tooltips**: Adding tooltips for additional information when hovering over inventory slots.
+3. **Sound Effects**: Implement sound effects for item interactions, such as clicks and drag-and-drop actions.
+4. **UI Animations**: Smooth animations for opening/closing the inventory UI and updating item slots.
 
 ---
+
+📅 **Last Updated**: 2024-11-11
