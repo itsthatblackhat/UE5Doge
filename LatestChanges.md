@@ -59,12 +59,6 @@
    - Fixed transaction notifications not displaying correctly due to incorrect bindings.
    - Ensured that transaction messages hide after the specified delay.
 
-## 🔮 Potential Future Enhancements:
-1. **Stackable Items**: Support for managing item stacks and updating the quantity display in inventory slots.
-2. **Tooltips**: Adding tooltips for additional information when hovering over inventory slots.
-3. **Sound Effects**: Implement sound effects for item interactions, such as clicks and drag-and-drop actions.
-4. **UI Animations**: Smooth animations for opening/closing the inventory UI and updating item slots.
-
 ---
 
 📅 **Last Updated**: 2024-11-11
